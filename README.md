@@ -27,6 +27,7 @@ Use the `ArticulationBody.driveForce` property to get the forces applied by the 
 
 ## Getting forces required to reach a specific acceleration
 
-Use `ArticulationBody.GetJointForcesForAcceleration(ArticulationReducedSpace acceleration)` to get the forces needed to reach the provided acceleration in reduced space. This method works on the specific Articulation Body and not the whole chain. 
+Use `ArticulationBody.GetJointForcesForAcceleration(ArticulationReducedSpace acceleration)` to get the forces needed to reach the provided acceleration in reduced space. This method works on the specific Articulation Body and not the whole chain. \
+**Note:** The DoF count for the provided acceleration must match the DoF count of the inbound joint. (for example if the inbound joint is prismatic or revolute, the provided acceleration should also only have one DoF)
 
 ![ID Forces For acceleration](/Demo_gifs/ID_ForcesForAcceleration_Demo.gif)
