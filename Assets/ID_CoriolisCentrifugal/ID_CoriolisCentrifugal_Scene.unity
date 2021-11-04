@@ -357,7 +357,7 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198550139}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Mass: 5
   m_ParentAnchorPosition: {x: 0, y: 2.25, z: 0}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1753,7 +1753,7 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793139695}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Mass: 5
   m_ParentAnchorPosition: {x: 0, y: 0, z: -2.5}
   m_ParentAnchorRotation: {x: -0.49999925, y: 0.49999925, z: 0.5000007, w: 0.5000007}
@@ -2313,7 +2313,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Coriolis Force
+  m_Text: 'Coriolis/Centrifugal
+
+    Force'
 --- !u!222 &1005765383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2582,7 +2584,7 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191201440}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Mass: 5
   m_ParentAnchorPosition: {x: 0, y: 0, z: 0}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
@@ -2696,7 +2698,7 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241982501}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Mass: 5
   m_ParentAnchorPosition: {x: 0, y: 2.25, z: 0}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
@@ -3993,7 +3995,7 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711596002}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Mass: 1
   m_ParentAnchorPosition: {x: 0, y: 0, z: 0}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
@@ -4173,7 +4175,7 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794457151}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Mass: 2
   m_ParentAnchorPosition: {x: 0, y: -0.000008106232, z: -2.75}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}

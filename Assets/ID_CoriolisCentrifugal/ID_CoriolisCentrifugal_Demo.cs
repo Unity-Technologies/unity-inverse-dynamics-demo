@@ -24,7 +24,7 @@ public class ID_CoriolisCentrifugal_Demo : MonoBehaviour
         targetAB.GetJointCoriolisCentrifugalForces(results);
         targetAB.GetDofStartIndices(indices);
 
-        statusOutput.text = "Coriolis Force: \n" + (-results[indices[targetAB.index]]).ToString("F2") + " N";
+        statusOutput.text = "Coriolis/Centrifugal\nForce: \n" + (-results[indices[targetAB.index]]).ToString("F2") + " N";
     }
 
     public void OnClickIncrease()
