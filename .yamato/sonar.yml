@@ -12,7 +12,8 @@ csharp:
         UNITY_VERSION: 2022.1.0a16
     commands:
         - npm install upm-ci-utils@stable -g --registry https://artifactory.prd.it.unity3d.com/artifactory/api/npm/upm-npm
-        - brew upgrade unity/homebrew-unity/unity-downloader-cli
+        - brew tap --force-auto-update unity/homebrew-unity git@github.cds.internal.unity3d.com:unity/homebrew-unity.git
+        = brew install unity/homebrew-unity/unity-downloader-cli
         - unity-downloader-cli -u $UNITY_VERSION -c Editor
         - brew install mono corretto
         - curl https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-net46.zip -o sonar-scanner-msbuild-net46.zip -L
