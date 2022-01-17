@@ -5,7 +5,6 @@ csharp:
         image: package-ci/mac
         flavor: m1.mac
     variables:
-        PROJECT_PATH: 
         SONARQUBE_PROJECT_KEY: ai-robotics-inverse-dynamics-csharp
         SONARQUBE_PROJECT_BASE_DIR: /Users/bokken/build/output/Unity-Technologies/
         MSBUILD_SLN_PATH: ./unity-inverse-dynamics-demo.sln
@@ -18,9 +17,8 @@ csharp:
         - curl https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-net46.zip -o sonar-scanner-msbuild-net46.zip -L
         - unzip sonar-scanner-msbuild-net46.zip -d ~/sonar-scanner-msbuild
         - chmod a+x ~/sonar-scanner-msbuild/sonar-scanner-4.6.1.2450/bin/sonar-scanner
-        - .Editor/Unity.app/Contents/MacOS/Unity -projectPath $PROJECT_PATH -batchmode -quit -nographics -logFile - -executeMethod "UnityEditor.SyncVS.SyncSolution"
+        - .Editor/Unity.app/Contents/MacOS/Unity -batchmode -quit -nographics -logFile - -executeMethod "UnityEditor.SyncVS.SyncSolution"
         - command: |
-            cd $PROJECT_PATH
             for file in *.csproj; do sed -i.backup "s/^[[:blank:]]*<ReferenceOutputAssembly>false<\/ReferenceOutputAssembly>/<ReferenceOutputAssembly>true<\/ReferenceOutputAssembly>/g" $file; rm $file.backup; done
             cd $PROJECT_ROOT
         - mono ~/sonar-scanner-msbuild/SonarScanner.MSBuild.exe begin /k:$SONARQUBE_PROJECT_KEY /d:sonar.host.url=$SONARQUBE_ENDPOINT_URL_PRD /d:sonar.login=$SONARQUBE_TOKEN_PRD /d:sonar.projectBaseDir=$SONARQUBE_PROJECT_BASE_DIR
