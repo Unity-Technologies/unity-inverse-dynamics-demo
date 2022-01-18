@@ -2,7 +2,7 @@ csharp:
     name: Sonarqube C# Scan
     agent:
         type: Unity::metal::macmini
-        image: package-ci/mac:latest
+        image: package-ci/mac:v1.18.3-973558
         flavor: m1.mac
     variables:
         SONARQUBE_PROJECT_KEY: ai-robotics-inverse-dynamics-csharp
@@ -17,7 +17,7 @@ csharp:
         - curl https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-net46.zip -o sonar-scanner-msbuild-net46.zip -L
         - unzip sonar-scanner-msbuild-net46.zip -d ~/sonar-scanner-msbuild
         - chmod a+x ~/sonar-scanner-msbuild/sonar-scanner-4.6.1.2450/bin/sonar-scanner
-        - .Editor/Unity.app/Contents/MacOS/Unity -projectPath $PROJECT_ROOT -batchmode -quit -nographics -logFile - -executeMethod "UnityEditor.SyncVS.SyncSolution"
+        - .Editor/Unity.app/Contents/MacOS/Unity -batchmode -quit -nographics -logFile - -executeMethod "UnityEditor.SyncVS.SyncSolution"
         - command: |
             cd $PROJECT_ROOT
             for file in *.csproj; do sed -i.backup "s/^[[:blank:]]*<ReferenceOutputAssembly>false<\/ReferenceOutputAssembly>/<ReferenceOutputAssembly>true<\/ReferenceOutputAssembly>/g" $file; rm $file.backup; done
