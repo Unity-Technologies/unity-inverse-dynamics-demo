@@ -9,7 +9,7 @@ csharp:
         SONARQUBE_PROJECT_KEY: ai-robotics-inverse-dynamics-csharp
         SONARQUBE_PROJECT_BASE_DIR: /Users/bokken/build/output/Unity-Technologies/
         MSBUILD_SLN_PATH: ./InverseDynamicsDemoProject/unity-inverse-dynamics-demo.sln
-        PROJECT_RELATIVE_PATH: ../
+        ROOT_RELATIVE_PATH: ../
         UNITY_VERSION: 2022.1.0a16
     commands:
         - npm install upm-ci-utils@stable -g --registry https://artifactory.prd.it.unity3d.com/artifactory/api/npm/upm-npm
