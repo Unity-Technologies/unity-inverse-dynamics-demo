@@ -8,7 +8,7 @@ csharp:
         PROJECT_DIR: InverseDynamicsDemoProject
         SONARQUBE_PROJECT_KEY: ai-robotics-inverse-dynamics-csharp
         SONARQUBE_PROJECT_BASE_DIR: /Users/bokken/build/output/Unity-Technologies/
-        MSBUILD_SLN_PATH: ./unity-inverse-dynamics-demo.sln
+        MSBUILD_SLN_PATH: .InverseDynamicsDemoProject/unity-inverse-dynamics-demo.sln
         PROJECT_ROOT: /Users/bokken/build/output/Unity-Technologies
         UNITY_VERSION: 2022.1.0a16
     commands:
