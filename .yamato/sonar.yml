@@ -18,6 +18,10 @@ csharp:
         - curl https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-net46.zip -o sonar-scanner-msbuild-net46.zip -L
         - unzip sonar-scanner-msbuild-net46.zip -d ~/sonar-scanner-msbuild
         - chmod a+x ~/sonar-scanner-msbuild/sonar-scanner-4.6.1.2450/bin/sonar-scanner
+        - brew install --cask visual-studio-code
+        - defaults write ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist kScriptsDefaultApp "/Application/Visual Studio Code.app"
+        - defaults write ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist unity_generate_all_csproj -int 1
+        - defaults write ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist unity_project_generation_flag -int 3
         - .Editor/Unity.app/Contents/MacOS/Unity -batchmode -projectPath $PROJECT_DIR -quit -nographics -logFile - -executeMethod "UnityEditor.SyncVS.SyncSolution"
         - command: |
             cd $PROJECT_DIR
