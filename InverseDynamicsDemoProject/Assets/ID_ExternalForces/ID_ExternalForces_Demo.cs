@@ -38,6 +38,8 @@ public class ID_ExternalForces_Demo : MonoBehaviour
 
     void FixedUpdate()
     {
+        // We apply the force here and clear the list, to ensure that all the forces were added
+        // only once and were added before we call GetJointExternalForces
         foreach (var body in m_Bodies)
         {
             body.AddForce(m_WindForce * Time.fixedDeltaTime* Random.Range(0.75f, 1.25f));
@@ -69,10 +71,9 @@ public class ID_ExternalForces_Demo : MonoBehaviour
         m_ButtonText.text = "Apply Forces: " + b_ApplyExternalForces;
     }
 
-
-
     private void OnTriggerStay(Collider other)
     {
+        // We collect the bodies that are in our trigger zone, but don't apply the force yet
         ArticulationBody ab = other.GetComponentInParent<ArticulationBody>();
 
         if (ab != null)
