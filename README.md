@@ -31,3 +31,10 @@ Use `ArticulationBody.GetJointForcesForAcceleration(ArticulationReducedSpace acc
 **Note:** The DoF count for the provided acceleration must match the DoF count of the inbound joint. (for example if the inbound joint is prismatic or revolute, the provided acceleration should also only have one DoF)
 
 ![ID Forces For acceleration](/Demo_gifs/ID_ForcesForAcceleration_Demo.gif)
+
+## Getting the Reduced Space forces needed to counteract External forces
+
+Use `ArticulationBody.GetJointExternalForces(List<float> forces)` to get the forces needed to counteract any previously applied forces in generalized space. This only works with forces that you've added yourself with methods like `ArticulationBody.AddForce` or `ArticulationBody.AddTorque`. 
+Keep in mind that order of execution is very important. You want to make sure that all your forces are added first and only then you call the above External Forces getter. Otherwise, you may get either no forces returned or an incomplete set of forces.
+
+![ID External Forces Demo](/Demo_gifs/ID_ExternalForces.gif)
